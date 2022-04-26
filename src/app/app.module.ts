@@ -15,13 +15,18 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 
+
+
 // Le routing de navigation
 const appRoutes: Routes = [
   {path: 'auth/signup', component: SignupComponent},
   {path: 'auth/signin', component: SigninComponent},//
-  {path: 'books', component: BookListComponent}, //path books pour la list view
-  {path: 'books/new', component: BookFormComponent},//path pour la création d'un nouveau livre
-  {path: 'books/view/:id', component: SingleBookComponent},//path pour voir un livre à partir de son id
+  {path: 'books', canActivate: [AuthGuardService], component: BookListComponent}, //path books pour la list view
+  {path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent},//path pour la création d'un nouveau livre
+  {path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent},//path pour voir un livre à partir de son id
+  {path: '', redirectTo: 'books', pathMatch: 'full'},
+  {path: '**', redirectTo: 'books'},
+
 
   ];
 
@@ -42,7 +47,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     AuthService,

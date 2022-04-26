@@ -13,14 +13,15 @@
 
       <!--barre de navigation-->
       <form>
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        <input class="form-control" type="text" placeholder="Rechercher" aria-label="Search">
       </form>
 
   </div>
     <!--login-->
     <div class="navbar-nav navbar-right">
-      <li routerLinkActive="active" class="nav-item"><a routerLink="auth/signup" class="nav-link" >Créer un compte</a></li>
-      <li routerLinkActive="active" class="nav-item"><a routerLink="auth/signin" class="nav-link">Connexion</a></li>
+      <li *ngIf="!isAuth" routerLinkActive="active" class="nav-item"><a routerLink="auth/signup" class="nav-link" >Créer un compte</a></li>
+      <li *ngIf="!isAuth" routerLinkActive="active" class="nav-item"><a routerLink="auth/signin" class="nav-link">Connexion</a></li>
+      <li *ngIf="isAuth"  (click)="onSignOut()" routerLinkActive="active" class="nav-item"><a  routerLink="home" class="nav-link">Deconnexion</a></li>
     </div>
 
   </div>
