@@ -15,6 +15,7 @@ import initializeApp = firebase.initializeApp;
 })
 export class AppComponent {
   title = 'appLivres';
+
   constructor() {
     // Your web app's Firebase configuration
 
@@ -22,27 +23,23 @@ export class AppComponent {
 
     const firebaseConfig = {
 
-      apiKey: "AIzaSyCB8_B9NQnYG1b7jVYl4JWkmXCwhrUC74o",
+      apiKey: "AIzaSyDsj-IjGBwGF4Im0eawQS_OcOBztZW---A",
 
-      authDomain: "applivres-30ca6.firebaseapp.com",
+      authDomain: "livres-3220e.firebaseapp.com",
 
-      projectId: "applivres-30ca6",
+      projectId: "livres-3220e",
 
-      storageBucket: "applivres-30ca6.appspot.com",
+      storageBucket: "livres-3220e.appspot.com",
 
-      messagingSenderId: "989890138276",
+      messagingSenderId: "950819788444",
 
-      appId: "1:989890138276:web:fffa47c09340353a085631",
-
-      measurementId: "G-21E2GVG7QP"
+      appId: "1:950819788444:web:b88f46c9284ab5c264ff59"
 
     };
 
 
 // Initialize Firebase
 
-    const firebaseApp = initializeApp(firebaseConfig);
-
-
+    const app = initializeApp(firebaseConfig);
   }
 }

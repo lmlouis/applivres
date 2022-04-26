@@ -1,1 +1,10 @@
-<p>single-book works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <img style="max-width: 250px" *ngIf="book.photo" [src]="book.photo" alt="image du livre {{book.title}} de {{book.author}}">
+    <h1>{{book.title}}</h1>
+    <h3>{{book.author}}</h3>
+    {{book.photo.length}}
+    <hr>
+    <button (click)="onBack()"  class="btn btn-close-black">Retour</button>
+  </div>
+</div>
